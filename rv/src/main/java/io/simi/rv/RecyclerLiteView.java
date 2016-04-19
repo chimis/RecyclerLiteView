@@ -8,12 +8,12 @@ import android.util.Log;
 
 /**
  * @author chimis@foxmail.com (CHIMIS 葛相池)
- * @date 2016/4/18.
  */
 
 public class RecyclerLiteView extends RecyclerView {
 
     private boolean isRecyclerAdapter = false;
+    private boolean isRecyclerGroupAdapter = false;
     private boolean isLoading = false;
     private int minNumber = 3;
 
@@ -55,7 +55,7 @@ public class RecyclerLiteView extends RecyclerView {
                 recyclerAdapter.setOnItemLongClickListener(onItemLongClickListener);
             }
         } else if (adapter instanceof RecyclerGroupAdapter) {
-            isRecyclerAdapter = true;
+            isRecyclerGroupAdapter = true;
             RecyclerGroupAdapter recyclerAdapter = (RecyclerGroupAdapter) adapter;
             if (onItemClickListener != null) {
                 recyclerAdapter.setOnItemClickListener(onItemClickListener);
@@ -64,7 +64,7 @@ public class RecyclerLiteView extends RecyclerView {
                 recyclerAdapter.setOnItemLongClickListener(onItemLongClickListener);
             }
         } else {
-            Log.e("Error!", "This RecyclerLiteView not use a RecyclerAdapter!");
+            Log.e("Error!", "This RecyclerLiteView not use a RecyclerAdapter or RecyclerGroupAdapter!");
         }
     }
 
@@ -87,12 +87,18 @@ public class RecyclerLiteView extends RecyclerView {
         if (isRecyclerAdapter) {
             ((RecyclerAdapter) getAdapter()).setOnItemClickListener(onItemClickListener);
         }
+        if (isRecyclerGroupAdapter) {
+            ((RecyclerGroupAdapter) getAdapter()).setOnItemClickListener(onItemClickListener);
+        }
     }
 
     public void setOnItemLongClickListener(OnItemLongClickListener onItemLongClickListener) {
         this.onItemLongClickListener = onItemLongClickListener;
         if (isRecyclerAdapter) {
             ((RecyclerAdapter) getAdapter()).setOnItemLongClickListener(onItemLongClickListener);
+        }
+        if (isRecyclerGroupAdapter) {
+            ((RecyclerGroupAdapter) getAdapter()).setOnItemLongClickListener(onItemLongClickListener);
         }
     }
 

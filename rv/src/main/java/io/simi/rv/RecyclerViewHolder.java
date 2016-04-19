@@ -3,6 +3,9 @@ package io.simi.rv;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+/**
+ * @author chimis@foxmail.com (CHIMIS 葛相池)
+ */
 
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 

@@ -1,17 +1,9 @@
 package io.simi.rv;
 
-import android.util.Log;
 import android.util.SparseArray;
-import android.view.View;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static io.simi.rv.ViewType.Type.DEFAULT;
 
 /**
- * @author gexc@longkeysoft.cn (ND0113 葛相池)
- * @date 2016/4/18.
+ * @author chimis@foxmail.com (CHIMIS 葛相池)
  */
 
 public class ViewTypeArray {

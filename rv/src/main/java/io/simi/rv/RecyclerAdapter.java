@@ -10,7 +10,6 @@ import java.util.List;
 
 /**
  * @author chimis@foxmail.com (CHIMIS 葛相池)
- * @date 2016/4/18.
  */
 
 public abstract class RecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
