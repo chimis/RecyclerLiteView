@@ -12,6 +12,10 @@ public class ViewTypeArray {
     private SparseArray<ViewType> singleViewType = new SparseArray<>();
     private SparseArray<ViewType> loopViewType = new SparseArray<>();
 
+    public ViewTypeArray(int defaultLayoutResId) {
+        defaultViewType = new ViewType(ViewType.Type.DEFAULT, 0, defaultLayoutResId);
+    }
+
     public void add(ViewType.Type type, int position, int layoutResId) {
         switch (type) {
             case DEFAULT:

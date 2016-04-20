@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerLiteView.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ViewTypeArray viewTypeArray = new ViewTypeArray();
-        viewTypeArray.add(ViewType.Type.DEFAULT, 0, R.layout.item_lite2);
+        ViewTypeArray viewTypeArray = new ViewTypeArray(R.layout.item_lite2);
         viewTypeArray.add(ViewType.Type.SINGLE, 0, R.layout.item_lite);
         viewTypeArray.add(ViewType.Type.LOOP, 2, R.layout.item_lite3);
         viewTypeArray.add(ViewType.Type.SINGLE, 4, R.layout.item_lite);
